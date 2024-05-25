@@ -1,0 +1,230 @@
+MODULE main
+VAR
+    pos11 : 1..3;
+    pos12 : 1..3;
+    pos13 : 1..3;
+    pos14 : 1..3;
+    pos15 : 1..3;
+    pos31 : 1..3;
+    pos32 : 1..3;
+    pos33 : 1..3;
+    pos34 : 1..3;
+    pos35 : 1..3;
+    steps_counter : 0..60;
+INIT
+pos11 = 3 & pos12 = 1 & pos13 = 1 & pos14 = 2 & pos15 = 2 & pos31 = 1 & pos32 = 1 & pos33 = 1 & pos34 = 1 & pos35 = 1 & steps_counter = 0
+TRANS
+   case
+    (steps_counter < 60 & pos11 = 3 & pos12 = 1):
+       next(pos11) = 1 &
+       next(pos12) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos33) = pos33
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos11 = 3 & pos12 = 2 & pos13 = 1):
+       (next(pos11) = 1 &
+       next(pos12) = 3 &
+       next(pos13) = 2 &
+       next(steps_counter) = steps_counter + 1);
+    (steps_counter < 60 & pos12 = 3 & pos11 = 1):
+       next(pos12) = 1 &
+       next(pos11) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos33) = pos33
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos12 = 3 & pos13 = 1):
+       next(pos12) = 1 &
+       next(pos13) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos33) = pos33
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos13 = 3 & pos12 = 1):
+       next(pos13) = 1 &
+       next(pos12) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos33) = pos33
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos13 = 3 & pos12 = 2 & pos11 = 1):
+       (next(pos13) = 1 &
+       next(pos12) = 3 &
+       next(pos11) = 2 &
+       next(steps_counter) = steps_counter + 1);
+    (steps_counter < 60 & pos13 = 3 & pos14 = 1):
+       next(pos13) = 1 &
+       next(pos14) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos33) = pos33
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos31 = 3 & pos32 = 1):
+       next(pos31) = 1 &
+       next(pos32) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos33) = pos33
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos31 = 3 & pos32 = 2 & pos33 = 1):
+       (next(pos31) = 1 &
+       next(pos32) = 3 &
+       next(pos33) = 2 &
+       next(steps_counter) = steps_counter + 1);
+    (steps_counter < 60 & pos32 = 3 & pos31 = 1):
+       next(pos32) = 1 &
+       next(pos31) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos33) = pos33
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos32 = 3 & pos33 = 1):
+       next(pos32) = 1 &
+       next(pos33) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos32 = 3 & pos33 = 2 & pos34 = 1):
+       (next(pos32) = 1 &
+       next(pos33) = 3 &
+       next(pos34) = 2 &
+       next(steps_counter) = steps_counter + 1);
+    (steps_counter < 60 & pos33 = 3 & pos32 = 1):
+       next(pos33) = 1 &
+       next(pos32) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos34) = pos34
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos33 = 3 & pos32 = 2 & pos31 = 1):
+       (next(pos33) = 1 &
+       next(pos32) = 3 &
+       next(pos31) = 2 &
+       next(steps_counter) = steps_counter + 1);
+    (steps_counter < 60 & pos33 = 3 & pos34 = 1):
+       next(pos33) = 1 &
+       next(pos34) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos33 = 3 & pos34 = 2 & pos35 = 1):
+       (next(pos33) = 1 &
+       next(pos34) = 3 &
+       next(pos35) = 2 &
+       next(steps_counter) = steps_counter + 1);
+    (steps_counter < 60 & pos34 = 3 & pos33 = 1):
+       next(pos34) = 1 &
+       next(pos33) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos35) = pos35
+;    (steps_counter < 60 & pos34 = 3 & pos33 = 2 & pos32 = 1):
+       (next(pos34) = 1 &
+       next(pos33) = 3 &
+       next(pos32) = 2 &
+       next(steps_counter) = steps_counter + 1);
+    (steps_counter < 60 & pos34 = 3 & pos35 = 1):
+       next(pos34) = 1 &
+       next(pos35) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos33) = pos33
+;    (steps_counter < 60 & pos35 = 3 & pos34 = 1):
+       next(pos35) = 1 &
+       next(pos34) = 3 &
+       next(steps_counter) = steps_counter + 1
+       & next(pos11) = pos11
+       & next(pos12) = pos12
+       & next(pos13) = pos13
+       & next(pos14) = pos14
+       & next(pos15) = pos15
+       & next(pos31) = pos31
+       & next(pos32) = pos32
+       & next(pos33) = pos33
+;    (steps_counter < 60 & pos35 = 3 & pos34 = 2 & pos33 = 1):
+       (next(pos35) = 1 &
+       next(pos34) = 3 &
+       next(pos33) = 2 &
+       next(steps_counter) = steps_counter + 1);
+
+       TRUE:
+
+        (next(pos11) = pos11)&
+        (next(pos12) = pos12)&
+        (next(pos13) = pos13)&
+        (next(pos14) = pos14)&
+        (next(pos15) = pos15)&
+        (next(pos31) = pos31)&
+        (next(pos32) = pos32)&
+        (next(pos33) = pos33)&
+        (next(pos34) = pos34)&
+        (next(pos35) = pos35)&
+        (next(steps_counter) = steps_counter);
+   esac;
+LTLSPEC
+   ! (F ((pos34 = 2) & (pos35 = 2)));
